@@ -1,0 +1,15 @@
+Beginning test for B = 1
+Test # 0 completed in 0.146 seconds
+Test # 1 completed in 0.086 seconds
+Test # 2 completed in 0.158 seconds
+Test # 3 completed in 0.005 seconds
+Test # 4 completed in 0.134 seconds
+Test # 5 completed in 0.179 seconds
+Test # 6 completed in 0.112 seconds
+Test # 7 completed in 0.011 seconds
+Test # 8 completed in 0.39 seconds
+Test # 9 completed in 0.007 seconds
+Tests completed in 1.229 seconds
+Average execution time is 0.12290000000000001 seconds
+
+Beginning test for B = 2
