@@ -52,18 +52,18 @@ public class Hash {
 		random = new Random();
 		int numTests = 10;
 		
-		for (B = 1; B < 32; B++) {
+		for (B = 1; B < 32; B = B*2) {
 			
 			writer.println("Beginning test for B = " + B);
 			
 			long startTime = System.currentTimeMillis();
-			performMultipleTests(numTests);
+			long totalAttempts = performMultipleTests(numTests);
 			long stopTime = System.currentTimeMillis();
 			
 			long elapsedTime = stopTime - startTime;
 			
 			writer.println("Tests completed in " + (double)elapsedTime/1000.0 + " seconds");
-			writer.println("Average execution time is " + (double)(elapsedTime/1000.0)/(double)numTests + " seconds");
+			writer.println("Average execution time is " + (double)(elapsedTime/1000.0)/(double)numTests + " seconds, average # attempts is " + totalAttempts/(double)numTests);
 			writer.println();
 			
 		}
@@ -71,7 +71,7 @@ public class Hash {
 		writer.close();
 	}
 	
-	public static void performSingleTest() {
+	public static long performSingleTest() {
 		byte[] P = new byte[B];
 		random.nextBytes(P);
 		
@@ -92,22 +92,25 @@ public class Hash {
 			
 			if (Arrays.equals(temp, P)) {
 				System.out.println("FOUND IT");
-				break;
+				return i;
 			}
 		}
 	}
 	
-	public static void performMultipleTests(int numTests) {
+	public static long performMultipleTests(int numTests) {
 		
+		long totalAttempts = 0;
 		for (int i = 0; i < numTests; i++) {
 			long startTime = System.currentTimeMillis();
-			performSingleTest();
+			long attempts = performSingleTest();
+			totalAttempts += attempts;
 			long stopTime = System.currentTimeMillis();
 			
 			long elapsedTime = stopTime - startTime;
 			
-			writer.println("Test # " + i + " completed in " + (double)elapsedTime/1000.0 + " seconds");
+			writer.println("Test # " + i + " completed in " + (double)elapsedTime/1000.0 + " seconds, took " + attempts + " attempts");
 		}
+		return totalAttempts;
 	}
 	
 	public static void printBytes(byte[] bytes) {
