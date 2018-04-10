@@ -8,11 +8,12 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Hash {
+public class Hash extends Thread{
 	
 	public static int B;
 	public static Random random;
 	public static PrintWriter writer;
+	public static long globalStart;
 	
 	private static int getRandomNumberInRange(Random random, int min, int max) {
 		
@@ -26,7 +27,10 @@ public class Hash {
 
 	public static void main(String[] args) {
 		
-		Runtime.getRuntime().addShutdownHook(new Thread()
+		globalStart = System.currentTimeMillis();
+		(new Hash()).start();	// begin run-time-check thread
+		
+		Runtime.getRuntime().addShutdownHook(new Thread()  // SIGKILL handler to close writer on quit
         {
             @Override
             public void run()
@@ -135,6 +139,28 @@ public class Hash {
 		}
 		
 		return digest;
+	}
+
+	/*
+	 * Thread that checks if execution time has exceeded 100,000 seconds (roughly equal to 30 hours)
+	 * If so, it closes the writer and exits the program
+	 */
+	@Override
+	public void run() {
+		while(true) {
+			long elapsedTime = System.currentTimeMillis() - globalStart;
+			
+			if (elapsedTime > 100000000) {
+				writer.close();
+				System.exit(-1);
+			}
+			try {
+				Thread.sleep(1000000);   // sleeps for roughly a half hour
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 
 }
