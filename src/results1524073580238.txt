@@ -1,0 +1,15 @@
+Beginning test for B = 1
+Test # 0 completed in 0.09 seconds, took 107 attempts
+Test # 1 completed in 0.094 seconds, took 235 attempts
+Test # 2 completed in 0.066 seconds, took 158 attempts
+Test # 3 completed in 0.112 seconds, took 407 attempts
+Test # 4 completed in 0.027 seconds, took 84 attempts
+Test # 5 completed in 0.07 seconds, took 313 attempts
+Test # 6 completed in 0.059 seconds, took 310 attempts
+Test # 7 completed in 0.07 seconds, took 371 attempts
+Test # 8 completed in 0.063 seconds, took 337 attempts
+Test # 9 completed in 0.054 seconds, took 230 attempts
+Tests completed in 0.705 seconds
+Average execution time is 0.0705 seconds, average # attempts is 255.2
+
+Beginning test for B = 2
