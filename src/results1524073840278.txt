@@ -1,0 +1,45 @@
+
+
+
+
+Beginning test for B = 1
+Test # 0 completed in 0.018 seconds, took 130 attempts
+Test # 1 completed in 0.003 seconds, took 114 attempts
+Test # 2 completed in 0.003 seconds, took 98 attempts
+Test # 3 completed in 0.005 seconds, took 221 attempts
+Test # 4 completed in 0.001 seconds, took 110 attempts
+Test # 5 completed in 0.003 seconds, took 148 attempts
+Test # 6 completed in 0.008 seconds, took 850 attempts
+Test # 7 completed in 0.001 seconds, took 10 attempts
+Test # 8 completed in 0.001 seconds, took 99 attempts
+Test # 9 completed in 0.001 seconds, took 235 attempts
+Tests completed in 0.043 seconds
+Average execution time is 0.0043 seconds, average # attempts is 201.5
+
+Beginning test for B = 2
+Test # 0 completed in 0.277 seconds, took 188872 attempts
+Test # 1 completed in 0.06 seconds, took 52281 attempts
+Test # 2 completed in 0.16 seconds, took 145947 attempts
+Test # 3 completed in 0.065 seconds, took 60780 attempts
+Test # 4 completed in 0.019 seconds, took 17902 attempts
+Test # 5 completed in 0.009 seconds, took 8260 attempts
+Test # 6 completed in 0.03 seconds, took 26825 attempts
+Test # 7 completed in 0.005 seconds, took 4642 attempts
+Test # 8 completed in 0.035 seconds, took 33464 attempts
+Test # 9 completed in 0.077 seconds, took 72495 attempts
+Tests completed in 0.739 seconds
+Average execution time is 0.0739 seconds, average # attempts is 61146.8
+
+Beginning test for B = 4
+Test # 0 completed in 898.702 seconds, took 822898977 attempts
+Test # 1 completed in 1973.478 seconds, took 1804622195 attempts
+Test # 2 completed in 2439.445 seconds, took 2246326024 attempts
+Test # 3 completed in 993.081 seconds, took 912859402 attempts
+Test # 4 completed in 25.05 seconds, took 22959829 attempts
+Test # 5 completed in 26655.431 seconds, took 24525304889 attempts
+Test # 6 completed in 4792.728 seconds, took 4409536963 attempts
+Test # 7 completed in 3089.857 seconds, took 2844968669 attempts
+Test # 8 completed in 1106.457 seconds, took 1019161385 attempts
+Test # 9 completed in 571.684 seconds, took 528113453 attempts
+Tests completed in 42545.914 seconds
+Average execution time is 4254.591399999999 seconds, average # attempts is 3.9136751786E9

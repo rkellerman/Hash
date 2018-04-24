@@ -84,7 +84,7 @@ public class Hash extends Thread{
 			System.out.println("Attempt # " + i);
 			i++;
 			
-			String message = new RandomString(getRandomNumberInRange(random, 1, 100), random).nextString();
+			String message = new RandomString(getRandomNumberInRange(random, 1, 1000), random).nextString();
 			System.out.println("Message M: " + message);
 			byte[] h = hash(message);
 			byte[] temp = Arrays.copyOfRange(h,  h.length - B, h.length);
