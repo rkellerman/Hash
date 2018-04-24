@@ -59,6 +59,7 @@ public class Hash extends Thread{
 		for (B = 1; B < 32; B = B*2) {
 			
 			writer.println("Beginning test for B = " + B);
+			System.out.println("Beginning test for B = " + B);
 			
 			long startTime = System.currentTimeMillis();
 			long totalAttempts = performMultipleTests(numTests);
@@ -69,7 +70,9 @@ public class Hash extends Thread{
 			writer.println("Tests completed in " + (double)elapsedTime/1000.0 + " seconds");
 			writer.println("Average execution time is " + (double)(elapsedTime/1000.0)/(double)numTests + " seconds, average # attempts is " + totalAttempts/(double)numTests);
 			writer.println();
-			
+			System.out.println("Tests completed in " + (double)elapsedTime/1000.0 + " seconds");
+                        System.out.println("Average execution time is " + (double)(elapsedTime/1000.0)/(double)numTests + " seconds, average # attempts is " + totalAttempts/(double)numTests);
+                        System.out.println();
 		}
 		
 		writer.close();
@@ -81,21 +84,23 @@ public class Hash extends Thread{
 		
 		long i = 0;
 		while (true) {
-			System.out.println("Attempt # " + i);
+			// System.out.println("Attempt # " + i);
 			i++;
-			
+
 			String message = new RandomString(getRandomNumberInRange(random, 1, 1000), random).nextString();
 			System.out.println("Message M: " + message);
+			// System.out.println("Message M: " + message);
+			
 			byte[] h = hash(message);
 			byte[] temp = Arrays.copyOfRange(h,  h.length - B, h.length);
 			
-			System.out.print("h(M): "); printBytes(h);
-			System.out.print("Last B bytes of h(M):"); printBytes(temp);
-			System.out.print("P: "); printBytes(P);
-			System.out.println();
+			// System.out.print("h(M): "); printBytes(h);
+			// System.out.print("Last B bytes of h(M):"); printBytes(temp);
+			// System.out.print("P: "); printBytes(P);
+			// System.out.println();
 			
 			if (Arrays.equals(temp, P)) {
-				System.out.println("FOUND IT");
+				// System.out.println("FOUND IT");
 				return i;
 			}
 		}
@@ -113,6 +118,7 @@ public class Hash extends Thread{
 			long elapsedTime = stopTime - startTime;
 			
 			writer.println("Test # " + i + " completed in " + (double)elapsedTime/1000.0 + " seconds, took " + attempts + " attempts");
+			System.out.println("Test # " + i + " completed in " + (double)elapsedTime/1000.0 + " seconds, took " + attempts + " attempts");
 		}
 		return totalAttempts;
 	}
@@ -150,12 +156,12 @@ public class Hash extends Thread{
 		while(true) {
 			long elapsedTime = System.currentTimeMillis() - globalStart;
 			
-			if (elapsedTime > 100000000) {
+			if (elapsedTime > 200000000) {
 				writer.close();
 				System.exit(-1);
 			}
 			try {
-				Thread.sleep(1000000);   // sleeps for roughly a half hour
+				Thread.sleep(2000000);   // sleeps for roughly a half hour
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
